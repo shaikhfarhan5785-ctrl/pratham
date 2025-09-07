@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRATHAM — Glacier Text</title>
+  <style>
+    /* Page reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    body {
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, #f7fbff 0%, #eaf6ff 50%, #f2f8ff 100%);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    /* Glacier-text styling */
+    .glacier {
+      font-weight: 800;
+      /* responsive size: scales between 48px and 200px */
+      font-size: clamp(48px, 12vw, 200px);
+      letter-spacing: -0.02em;
+      line-height: 1;
+
+      /* gradient text (glacier-like icy blue) */
+      background: linear-gradient(180deg, #e6f9ff 0%, #cfeeff 40%, #bfe7ff 60%, #9fdcff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      /* subtle shiny overlay */
+      position: relative;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0.2em 0.5em;
+    }
+
+    /* soft frosty glow */
+    .glacier::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      filter: blur(10px);
+      opacity: 0.35;
+      background: linear-gradient(180deg, rgba(200,235,255,0.35), rgba(160,220,255,0.15));
+      z-index: -1;
+      border-radius: 6px;
+    }
+
+    /* optional icy bevel using layered text-shadow */
+    .glacier {
+      text-shadow:
+        0 1px 0 rgba(255,255,255,0.9),
+        0 6px 20px rgba(80,140,200,0.12),
+        0 2px 6px rgba(30,90,140,0.08);
+    }
+
+    /* small credit (not necessary) */
+    .credit {
+      position: absolute;
+      bottom: 18px;
+      font-size: 12px;
+      color: #6c7b86;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="glacier">PRATHAM</h1>
+  <div class="credit">Glacier-style gradient • Responsive</div>
+
+</body>
+</html>
